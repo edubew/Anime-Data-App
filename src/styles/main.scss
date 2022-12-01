@@ -1,3 +1,47 @@
-h1 {
-  color: aquamarine;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  color: #000;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 20% 55%;
+  gap: 20%;
+  place-items: center;
+  background: blue;
+  padding-top: 2rem;
+
+  div {
+    padding-left: 5%;
+    padding-bottom: 1rem;
+
+    img{
+      width: 4rem;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      gap: 4rem;
+      list-style: none;
+
+      li {
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-weight: 600;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
