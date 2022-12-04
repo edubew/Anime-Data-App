@@ -1,90 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --color-bg: #111;
+  --color-primary: #ee4540;
+  --color-primary-variant: #8b0000;
+  --color-white: #d6e8ee;
+  --color-light: #dc143c;
+}
+
 body {
-  color: #000;
+  color: var(--color-white);
+  background: var(--color-bg);
+  font-family: 'Roboto Slab', serif;
+  overflow-x: hidden;
+}
+
+.text-light {
+  color: var(--color-primary);
 }
 
 header {
-  display: grid;
-  grid-template-columns: 20% 55%;
-  gap: 20%;
-  place-items: center;
-  background: blue;
-  padding-top: 2rem;
+  .name__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    box-shadow: 0 1px 6px #555;
 
-  div {
-    padding-left: 5%;
-    padding-bottom: 1rem;
-
-    img{
-      width: 4rem;
+    img {
+      width: 5rem;
       aspect-ratio: 1/1;
       border-radius: 50%;
     }
+
+    a {
+      text-decoration: none;
+      color: var(--color-primary);
+      font-weight: 600;
+      font-size: 1.4rem;
+      font-family: 'Josefin Sans', serif;
+
+      &:hover {
+        color: var(--color-white);
+      }
+    }
   }
 
-  nav {
+  h1 {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-align: center;
+    margin: 3rem 0;
+    font-family: 'Josefin Sans', serif;
+  }
+}
+
+.search__box {
+  width: 100%;
+  margin: 4% 35%;
+
+  @media (max-width: 600px) {
+    margin: 4% 10%;
+  }
+
+  input {
+    padding: 1.4rem;
+    width: 40%;
+    border-radius: 2rem;
+    border: 1px solid var(--color-light);
+    background: transparent;
+    font-size: 1rem;
+    color: var(--color-white);
+
+    @media (max-width: 600px) {
+      width: 60%;
+    }
+  }
+}
+
+.main__container {
+  display: grid;
+  grid-template-columns: 20% 70%;
+  gap: 3%;
+
+  aside {
+    height: 100vh;
+    width: max-content;
+    padding: 2rem;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+
+    h2 {
+      font-family: 'Josefin Sans', serif;
+      margin-bottom: 1rem;
+    }
+
     ul {
-      display: flex;
-      gap: 4rem;
       list-style: none;
 
       li {
+        padding: 1rem;
+
         a {
           text-decoration: none;
-          color: #fff;
-          font-weight: 600;
-          font-size: 1.2rem;
+          color: var(--color-white);
+          background: #c21235;
+          box-shadow: 0 2px 8px var(--color-light);
+          padding: 0.6rem;
+          border-radius: 16rem;
+        }
+      }
+    }
+  }
+
+  main {
+    .cards__container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+
+      @media (max-width: 1000px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        margin: 0 33%;
+        place-items: center;
+      }
+
+      .card__container {
+        background: #222;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        .card__details {
+          display: flex;
+          justify-content: space-between;
+          padding: 0.4rem;
+
+          h3 {
+            color: var(--color-light);
+            font-weight: 700;
+          }
         }
       }
     }
   }
 }
 
-// main section
-
-.container {
-  min-height: 100vh;
-
-  .anime__wrapper {
-    max-width: 1280px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 2rem;
-
-    .anime__card {
-      background: red;
-      // margin: 2.4rem 0;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
-      margin: 1rem 0;
-
-      .cover__photo {
-        width: 100%;
-        display: block;
-      }
-
-      .anime__name {
-        padding: 1.5rem 0.5rem;
-
-        h3 {
-          font-size: 1.2rem;
-        }
-      }
-    }
-  }
-}
-
-// media queries
-@media screen and (min-width: 600px){
-  .anime__wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-}

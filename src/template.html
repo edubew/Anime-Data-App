@@ -1,59 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= htmlWebpackPlugin.options.title %></title>
-</head>
-<body>
-  <header>
-    <div class="logo__container">
-      <img src="assets/logo.png" alt="logo" id="icon" />
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <div class="container">
-      <div class="anime__wrapper">
-        <article class="anime__card">
-          <div class="cover__photo">
-            <img src="../assets/background1.jpg" alt="cover photo" />
-          </div>
-          <div class="anime__name">
-            <h3>Naruto</h3>
-            <a href="#">Details</a>
-          </div>
-        </article>
-         <article class="anime__card">
-          <div class="cover__photo">
-            <img src="../assets/background1.jpg" alt="cover photo" />
-          </div>
-          <div class="anime__name">
-            <h3>Naruto</h3>
-            <a href="#">Details</a>
-          </div>
-        </article>
-         <article class="anime__card">
-          <div class="cover__photo">
-            <img src="../assets/background1.jpg" alt="cover photo" />
-          </div>
-          <div class="anime__name">
-            <h3>Naruto</h3>
-            <a href="#">Details</a>
-          </div>
-        </article>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <header>
+      <div class="name__container">
+        <img src="assets/logo.png" id="icon" />
+        <a href="#about">About</a>
       </div>
+      <h1>Your Favourite Animes</h1>
+    </header>
+
+    <div class="wrapper__container">
+      <form class="search__box">
+        <input type="search" placeholder="Search for an anime..." required />
+      </form>
+      <div class="main__container">
+      <aside>
+        <h2 class="text-light">Genre</h2>
+        <nav>
+          <ul>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Action</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main>
+        <div class="cards__container">
+          <article class="card__container">
+            <img src="#" alt="cover photo" />
+            <div class="card__details">
+              <h3>Naruto</h3>
+              <span>🧡</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
+              earum. Tempore doloribus amet tenetur quis quos vitae.
+            </p>
+          </article>
+          <article class="card__container">
+            <img src="#" alt="cover photo" />
+            <div class="card__details">
+              <h3>Naruto</h3>
+              <span>🧡</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
+              earum. Tempore doloribus amet tenetur quis quos vitae.
+            </p>
+          </article>
+          <article class="card__container">
+            <img src="#" alt="cover photo" />
+            <div class="card__details">
+              <h3>Naruto</h3>
+              <span>🧡</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
+              earum. Tempore doloribus amet tenetur quis quos vitae.
+            </p>
+          </article>
+          <article class="card__container">
+            <img src="#" alt="cover photo" />
+            <div class="card__details">
+              <h3>Naruto</h3>
+              <span>🧡</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
+              earum. Tempore doloribus amet tenetur quis quos vitae.
+            </p>
+          </article>
+          <article class="card__container">
+            <img src="#" alt="cover photo" />
+            <div class="card__details">
+              <h3>Naruto</h3>
+              <span>🧡</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
+              earum. Tempore doloribus amet tenetur quis quos vitae.
+            </p>
+          </article>
+        </div>
+      </main>
     </div>
-  </main>
-  <footer>
-    <p>&copy;By Edube💖</p> 
-  </footer>
-</body>
+    </div>
+    <footer>
+      <p>&copy;By Edube💖</p>
+    </footer>
+  </body>
 </html>
