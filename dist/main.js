@@ -2,23 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/main.js":
-/*!*********************!*\
-  !*** ./src/main.js ***!
-  \*********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function unique() {
-  return "I am awesome";
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (unique);
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss":
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss ***!
@@ -37,8 +20,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Source+Sans+Pro:wght@300&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Source+Sans+Pro:wght@300&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  color: aquamarine;\n}", "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA;EACE,iBAAA;AACF","sourcesContent":["h1 {\r\n  color: aquamarine;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\n:root {\n  --color-bg: #111;\n  --color-primary: #ee4540;\n  --color-primary-variant: #8b0000;\n  --color-white: #d6e8ee;\n  --color-light: #dc143c;\n}\n\nbody {\n  color: var(--color-white);\n  background: var(--color-bg);\n  font-family: \"Roboto Slab\", serif;\n}\n\n.text-light {\n  color: var(--color-primary);\n}\n\nheader {\n  display: flex;\n  justify-content: space-evenly;\n  align-items: center;\n  padding: 3rem;\n}\nheader img {\n  width: 7rem;\n  aspect-ratio: 1/1;\n  border-radius: 50%;\n}\nheader h1 {\n  color: var(--color-primary);\n  font-weight: 600;\n  font-family: \"Josefin Sans\";\n}\n\n.main__container {\n  display: grid;\n  grid-template-columns: 20% 70%;\n  gap: 3%;\n}\n.main__container aside {\n  height: 100vh;\n  width: max-content;\n  padding: 2rem;\n}\n.main__container aside h2 {\n  font-family: \"Josefin Sans\";\n  margin-bottom: 1rem;\n}\n.main__container aside ul {\n  list-style: none;\n}\n.main__container aside ul li {\n  padding: 1rem;\n}\n.main__container aside ul li a {\n  text-decoration: none;\n  color: var(--color-white);\n  background: #c21235;\n  box-shadow: 0 2px 8px var(--color-light);\n  padding: 0.6rem;\n  border-radius: 16rem;\n}\n.main__container main .cards__container {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 2rem;\n}\n.main__container main .cards__container .card__container {\n  background: #222;\n  padding: 1rem;\n  border-radius: 1rem;\n}\n.main__container main .cards__container .card__container .card__details {\n  display: flex;\n  justify-content: space-between;\n  padding: 0.4rem;\n}\n.main__container main .cards__container .card__container .card__details h3 {\n  color: var(--color-light);\n  font-weight: 700;\n}\n\n@media screen and (min-width: 600px) {\n  .anime__wrapper {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    gap: 2rem;\n  }\n}", "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAGA;EACE,SAAA;EACA,UAAA;EACA,sBAAA;AAAF;;AAGA;EACE,gBAAA;EACA,wBAAA;EACA,gCAAA;EACA,sBAAA;EACA,sBAAA;AAAF;;AAGA;EACE,yBAAA;EACA,2BAAA;EACA,iCAAA;AAAF;;AAGA;EACE,2BAAA;AAAF;;AAGA;EACE,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,aAAA;AAAF;AAEE;EACE,WAAA;EACA,iBAAA;EACA,kBAAA;AAAJ;AAGE;EACE,2BAAA;EAEA,gBAAA;EACA,2BAAA;AAFJ;;AAMA;EACE,aAAA;EACA,8BAAA;EACA,OAAA;AAHF;AAKE;EACE,aAAA;EACA,kBAAA;EACA,aAAA;AAHJ;AAKI;EACE,2BAAA;EACA,mBAAA;AAHN;AAMI;EACE,gBAAA;AAJN;AAMM;EACE,aAAA;AAJR;AAMQ;EACE,qBAAA;EACA,yBAAA;EACA,mBAAA;EACA,wCAAA;EACA,eAAA;EACA,oBAAA;AAJV;AAWI;EACE,aAAA;EACA,qCAAA;EACA,SAAA;AATN;AAWM;EACE,gBAAA;EACA,aAAA;EACA,mBAAA;AATR;AAWQ;EACE,aAAA;EACA,8BAAA;EACA,eAAA;AATV;AAWU;EACE,yBAAA;EACA,gBAAA;AATZ;;AAkBA;EACE;IACE,aAAA;IACA,qCAAA;IACA,SAAA;EAfF;AACF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Source+Sans+Pro:wght@300&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Source+Sans+Pro:wght@300&display=swap');\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n:root {\r\n  --color-bg: #111;\r\n  --color-primary: #ee4540;\r\n  --color-primary-variant: #8b0000;\r\n  --color-white: #d6e8ee;\r\n  --color-light: #dc143c;\r\n}\r\n\r\nbody {\r\n  color: var(--color-white);\r\n  background: var(--color-bg);\r\n  font-family: 'Roboto Slab', serif;\r\n}\r\n\r\n.text-light {\r\n  color: var(--color-primary);\r\n}\r\n\r\nheader {\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n  padding: 3rem;\r\n\r\n  img {\r\n    width: 7rem;\r\n    aspect-ratio: 1/1;\r\n    border-radius: 50%;\r\n  }\r\n\r\n  h1 {\r\n    color: var(--color-primary);\r\n    // text-align: center;\r\n    font-weight: 600;\r\n    font-family: 'Josefin Sans';\r\n  }\r\n}\r\n\r\n.main__container {\r\n  display: grid;\r\n  grid-template-columns: 20% 70%;\r\n  gap: 3%;\r\n\r\n  aside {\r\n    height: 100vh;\r\n    width: max-content;\r\n    padding: 2rem;\r\n\r\n    h2 {\r\n      font-family: 'Josefin Sans';\r\n      margin-bottom: 1rem;\r\n    }\r\n\r\n    ul {\r\n      list-style: none;\r\n\r\n      li {\r\n        padding: 1rem;\r\n\r\n        a {\r\n          text-decoration: none;\r\n          color: var(--color-white);\r\n          background: #c21235;\r\n          box-shadow: 0 2px 8px var(--color-light);\r\n          padding: 0.6rem;\r\n          border-radius: 16rem;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  main {\r\n    .cards__container {\r\n      display: grid;\r\n      grid-template-columns: repeat(4, 1fr);\r\n      gap: 2rem;\r\n\r\n      .card__container {\r\n        background: #222;\r\n        padding: 1rem;\r\n        border-radius: 1rem;\r\n\r\n        .card__details {\r\n          display: flex;\r\n          justify-content: space-between;\r\n          padding: 0.4rem;\r\n\r\n          h3 {\r\n            color: var(--color-light);\r\n            font-weight: 700;\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// media queries\r\n@media screen and (min-width: 600px) {\r\n  .anime__wrapper {\r\n    display: grid;\r\n    grid-template-columns: repeat(4, 1fr);\r\n    gap: 2rem;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -525,6 +510,16 @@ function styleTagTransform(css, styleElement) {
 
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/assets/logo.png":
+/*!*****************************!*\
+  !*** ./src/assets/logo.png ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "logo .png";
+
 /***/ })
 
 /******/ 	});
@@ -578,6 +573,18 @@ module.exports = styleTagTransform;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -594,6 +601,26 @@ module.exports = styleTagTransform;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -607,10 +634,12 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ "./src/main.js");
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
+/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
+/* harmony import */ var _assets_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/logo.png */ "./src/assets/logo.png");
 
 
+var icon = document.querySelector('#icon');
+icon.src = _assets_logo_png__WEBPACK_IMPORTED_MODULE_1__;
 })();
 
 /******/ })()
