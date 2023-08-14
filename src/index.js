@@ -1,6 +1,6 @@
 /* eslint-disable no-tabs */
 import './styles/main.scss';
-import logo from './assets/logo.png';
+import logo from './assets/logo.jpg';
 
 const icon = document.querySelector('#icon');
 icon.src = logo;
@@ -39,7 +39,7 @@ async function fetchAnime() {
 				<span class="tag">Fantasy</span>
 			</div>
       <h2 class="fact">Fun Fact:</h2>
-              <p class="desc">The highest grossing Anime film of all time is Demon Slayer: Mugen Train. The film grossed over $500 million at the worldwide box office and was the highest-grossing film of 2020.</p>
+              <p class="desc">Spirited Away was both the first anime to be nominated for an Oscar and the first one to win it.</p>
               <button type="submit" class="btn">View Description</button>
               </div>
             </article>
