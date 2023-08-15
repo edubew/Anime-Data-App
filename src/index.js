@@ -1,5 +1,7 @@
 /* eslint-disable no-tabs */
 import './styles/main.scss';
+import popUp from './popup.js';
+// import postComment from './postComments.js';
 import logo from './assets/logo.jpg';
 
 const icon = document.querySelector('#icon');
@@ -55,6 +57,15 @@ async function fetchAnime() {
     console.error('Error fetching anime:', error);
   }
 }
+
+const descriptionBtn = document.querySelectorAll('.btn');
+descriptionBtn.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    const animeId = e.target.closest('.card__container').getAttribute('data-id');
+    console.log('Clicked animeId:', animeId);
+    popUp(animeId);
+  });
+});
 
 // Event listener
 window.addEventListener('load', () => {
