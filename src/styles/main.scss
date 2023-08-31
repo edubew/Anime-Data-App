@@ -258,6 +258,18 @@ footer {
 }
 
 // Popup window styling
-.modal__wrapper {
-  display: block !important;
+#popup-window {
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  background: blue;
+  border: 1px solid black;
+  padding: 10px;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
 }
