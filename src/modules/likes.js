@@ -14,13 +14,20 @@ export const createLike = async (id) => {
 };
 
 // Get likes from the API
-export const getLikes = async () => {
+export const getLikes = async (id) => {
   try {
     const response = await fetch(likesUrl);
     const likesData = await response.json();
-    return likesData.likes || [];
+
+    const like = likesData.find((like) => like.item_id === id);
+
+    if (like) {
+      return like.likes || [];
+    }
+    // If no matching item is found, return an appropriate default value
+    return [];
   } catch (error) {
     console.error('Error fetching likes:', error);
-    return []; // Return an empty array or appropriate default value
+    return [];
   }
 };
