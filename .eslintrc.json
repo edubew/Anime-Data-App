@@ -14,7 +14,11 @@
   ],
   "rules": {
     "no-shadow": "off",
+    "no-console": "off",
+    "no-nested-ternary": "off",
+    "no-unused-vars": "off",
     "no-param-reassign": "off",
+    "import/prefer-default-export": "off",
     "eol-last": "off",
     "import/extensions": [
       1,
