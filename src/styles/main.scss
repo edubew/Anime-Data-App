@@ -23,6 +23,10 @@ body {
   min-height: 100vh;
 }
 
+ul {
+  list-style: none;
+  font-style: oblique;
+}
 .text-light {
   color: var(--color-primary);
 }
@@ -260,10 +264,12 @@ footer {
 // Popup window styling
 #popup-window {
   position: fixed;
-  width: 300px;
-  height: 200px;
-  background: blue;
+  // width: 300px;
+  // height: 200px;
+  background: #000a;
+  backdrop-filter: blur(16px) saturate(100%);
   border: 1px solid black;
+  overflow-y: scroll;
   padding: 10px;
   margin: auto;
   top: 0;
@@ -272,4 +278,102 @@ footer {
   left: 0;
   z-index: 10;
   display: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#popup-window::-webkit-scrollbar {
+  display: none;
+}
+
+.modal__content {
+  margin: 2%;
+
+  .synopsis__container {
+    display: flex;
+    gap: 2rem;
+    width: 80%;
+    margin: auto;
+
+    img {
+      aspect-ratio: 1/1;
+      width: 23rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .name__likes {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      font-size: 1.3rem;
+      padding: 1rem 0;
+
+      .like__button {
+        font-size: 1.8rem;
+        background: none;
+        color: red;
+      }
+    }
+  }
+
+  .comments__title {
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .comments__container {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: #000;
+    list-style: none;
+    width: 60%;
+    margin: auto;
+
+    li:nth-child(odd) {
+      background-color: #dc143c;
+      padding: 0.6rem;
+    }
+
+    li:nth-child(even) {
+      background-color: #cab4bf;
+      padding: 0.6rem;
+    }
+  }
+
+  .form__container {
+    h2 {
+      font-size: 1.4rem;
+      padding: 1rem 0;
+      text-align: center;
+    }
+   
+    .comment__form {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      gap: 1rem;
+      margin: auto;
+
+      input, textarea {
+        padding: 0.8rem;
+        background: transparent;
+        color: #fff;
+        border-radius: 0.6rem;
+        font-size: 1.2rem;
+        border: 2px solid #dc143c;
+      }
+
+      button {
+        padding: 0.8rem;
+        color: #fff;
+        background: #dc143c;
+        border-radius: 0.6rem;
+        font-size: 1.2rem;
+        font-weight: bolder;
+      }
+    }
+  }
 }
