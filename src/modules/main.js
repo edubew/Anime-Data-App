@@ -52,12 +52,6 @@ async function fetchAnime() {
       // Populate the cards container with the show content
       const cardsContainer = document.querySelector('#cardsContainer');
       cardsContainer.innerHTML = show;
-
-      // Add click event listeners to the popup links after the buttons are generated
-      // const popupLinks = document.querySelectorAll('.popup-link');
-      // popupLinks.forEach((popupLink) => {
-      //   popupLink.addEventListener('click', handlePopupLinkClick);
-      // });
     } else {
       show = '<p>No data available.</p>';
     }
@@ -76,7 +70,6 @@ document.addEventListener('click', async (e) => {
       modal.style.display = 'block';
       const animeId = cardContainer.getAttribute('data-id');
       popUp(animeId);
-      // popUp();
     }
   }
 });
