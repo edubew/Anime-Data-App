@@ -27,6 +27,7 @@ ul {
   list-style: none;
   font-style: oblique;
 }
+
 .text-light {
   color: var(--color-primary);
 }
@@ -262,10 +263,16 @@ footer {
 }
 
 // Popup window styling
+#close-btn {
+  float: right;
+  font-size: 2.5rem;
+  margin: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+
 #popup-window {
   position: fixed;
-  // width: 300px;
-  // height: 200px;
   background: #000a;
   backdrop-filter: blur(16px) saturate(100%);
   border: 1px solid black;
@@ -295,9 +302,20 @@ footer {
     width: 80%;
     margin: auto;
 
+    @media (max-width: 900px) {
+      width: 96%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
     img {
       aspect-ratio: 1/1;
       width: 23rem;
+
+      @media (max-width: 400px) {
+        width: 21rem;
+      }
     }
 
     .description {
@@ -310,6 +328,10 @@ footer {
       gap: 4rem;
       font-size: 1.3rem;
       padding: 1rem 0;
+
+      @media (max-width: 600px) {
+        justify-content: center;
+      }
 
       .like__button {
         font-size: 1.8rem;
@@ -332,6 +354,10 @@ footer {
     width: 60%;
     margin: auto;
 
+    @media (max-width: 600px) {
+      width: 80%;
+    }
+
     li:nth-child(odd) {
       background-color: #dc143c;
       padding: 0.6rem;
@@ -349,7 +375,7 @@ footer {
       padding: 1rem 0;
       text-align: center;
     }
-   
+
     .comment__form {
       display: flex;
       flex-direction: column;
@@ -357,7 +383,12 @@ footer {
       gap: 1rem;
       margin: auto;
 
-      input, textarea {
+      @media (max-width: 600px) {
+        width: 94%;
+      }
+
+      input,
+      textarea {
         padding: 0.8rem;
         background: transparent;
         color: #fff;
