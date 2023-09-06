@@ -11,65 +11,56 @@ closeBtn.addEventListener('click', () => {
 
 const popUp = async (id) => {
   try {
-    console.log('Received ID:', id);
     const response = await fetch(`https://kitsu.io/api/edge/anime/${id}`);
-    console.log('Fetch URL:', `https://kitsu.io/api/edge/anime/${id}`);
     const animeData = await response.json();
-    console.log('Anime Data:', animeData);
 
     const comments = await getComments(id);
-    console.log('Comments Data:', comments);
-
-    // Fetch Likes
     const likesData = await getLikes();
-    console.log('Likes Data:', likesData);
-
-    if (!Array.isArray(likesData)) {
-      throw new Error('Invalid or empty likes data');
-    }
 
     const likedItem = likesData.map((like) => like.item_id);
-
-    // Check if comments is an array
-    if (!Array.isArray(comments)) {
-      console.error('Invalid comments data');
-      return;
-    }
 
     const modalContent = `
       <div>
         <div class="modal__content">
-          <img src=${animeData.data.attributes.posterImage.original} alt="cover" />
-          <div class="name__likes">
-            <h2>${animeData.data.attributes.canonicalTitle}</h2>
-            <p>
-            Likes: ${likesData.length}
-            <button class="like__button" ${likedItem.includes(id) ? 'disabled' : ''}>Like</button>
-            </p>
-          </div>
-          <div class="description">
-            <p>${animeData.data.attributes.synopsis}</p>
-          </div>
-            <h2>Comments (${comments.length})</h2>
-
-            <div class="comments__container">
-              ${comments.map((comment) => `<li>${comment.username} (${comment.date}):  ${comment.comment}</li>`).join('')}
+          <div class="synopsis__container">
+            <img src=${animeData.data.attributes.posterImage.original} alt="cover" />
+            <div>
+              <div class="name__likes">
+                <h2>${animeData.data.attributes.canonicalTitle}</h2>
+                <p>
+                  <i class="fa-solid fa-heart like__button ${likedItem.includes(id) ? 'disabled' : ''}"> </i>
+                  ${likesData.length}
+                </p>
+              </div>
+              <div class="description">
+                <p>${animeData.data.attributes.synopsis}</p>
+              </div>
             </div>
-
-          <div class="form__container" id="${animeData.id}">
-            <h2>Add a comment</h2>
-            <form class="comment__form">
-              <input type="text" id="username" placeholder="Your name..." />
-              <textarea id="commentText" placeholder="Add your comment"></textarea>
-              <button type="submit">Submit</button>
-            </form>
           </div>
+          <h2 class="comments__title">Comments (${comments.length})</h2>
+          <div class="comments__container">
+          <ul>
+          ${
+  Array.isArray(comments)
+    ? comments.length === 0
+      ? '<li>No comments yet. Be the first to comment!</li>'
+      : comments.map((comment) => `<li>${comment.username}: ${comment.comment}</li>`).join('')
+    : '<li>Please add a comment!!</li>'
+}
+        </ul>
+          </div>
+        <div class="form__container" id="${animeData.id}">
+          <h2>Add a comment</h2>
+          <form class="comment__form">
+            <input type="text" id="username" placeholder="Your name..." />
+            <textarea id="commentText" placeholder="Add your comment"></textarea>
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
     `;
-    modalContainer.innerHTML += 'modalContent';
 
-    // modalContainer.innerHTML += modalContent;
+    modalContainer.innerHTML = modalContent;
 
     // Add likes functionality
     const likeBtn = document.querySelector('.like__button');
@@ -96,15 +87,14 @@ const popUp = async (id) => {
 
       const username = usernameInput.value;
       const comment = commentTextInput.value;
-      // const date = new Date().toLocaleString();
 
       if (username && comment) {
         try {
           await postComment(id, username, comment);
           // Refresh the comments section
           const updatedComments = await getComments(id);
-          const commentsContainer = document.querySelectorAll('.comments__container ul');
-          commentsContainer.innerHTML = updatedComments.map((comment) => `<li>${comment.username} (${comment.date}):  ${comment.comment}</li>`).join('');
+          const commentsList = document.querySelector('.comments__container ul');
+          commentsList.innerHTML = updatedComments.map((comment) => `<li>${comment.username}: ${comment.comment}</li>`).join('');
 
           // Clear input fields
           usernameInput.value = '';
